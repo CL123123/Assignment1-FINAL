@@ -20,9 +20,9 @@
 			<div ng-repeat="option in options">
 				<div>
 				<label>
-					<button type="radio" name="answer" value="{{option}}" >
+					<button ng-click='checkAnswer()' class="btn btn-info btn-lg" >
 						{{option}}
-					</button>
+						</button>
 				</label>
 				</div>
 			</div>
@@ -30,7 +30,7 @@
 
 		<button ng-click="checkAnswer()"  class="btn btn-success btn-raised">Submit</button>
 
-		<!-- <button ng-click="nextQuestion()" class="btn btn-info btn-raised"class="next-question">Skip</button> -->
+		<button ng-click="nextQuestion()" class="btn btn-info btn-raised"class="next-question">Skip</button>
 		<div ng-show='!answerMode'><button ng-click="nextQuestion()" class="btn btn-info btn-raised"class="next-question">Next</button></div>
 
 		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
@@ -40,7 +40,7 @@
 
 	<div ng-show="quizOver" id="over">
 		<h2>The quiz has ended</h2>
-		<p>you scored {{score}} points!</p>
+		<p>You scored {{score}} points!</p>
 		<button ng-click="reset()" class="btn btn-info btn-raised">Play again</button>
 	</div>
 

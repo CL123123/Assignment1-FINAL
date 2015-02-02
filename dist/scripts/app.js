@@ -76,7 +76,7 @@ app.factory('quizFactory', function() {
 		{
 			question: "Which SIAT course is the best?",
 			options: ["IAT 344", "IAT 100", "IAT 381", "IAT 233"],
-			answer: [0, 1, 2, 3]
+			answer: 2
 		},
 		{	
 			question: "Which is the SIAT ‘standard’ font for presentations?",
@@ -86,7 +86,7 @@ app.factory('quizFactory', function() {
 		{
 			question: "How many years does it take to graduate from SIAT?",
 			options: ["Over 9000", "3", "4", "Graduate??? Pfft!"],
-			answer: [2, 3]
+			answer: 3
 		},
 		{
 			question: "Which phrases are heard throughout SIAT courses?",

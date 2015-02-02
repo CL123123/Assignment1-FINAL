@@ -21,7 +21,7 @@
 				<div>
 				<label>
 <!-- 				<input type="button" name="answer" value="{{option}}" ng-click="checkAnswer()" class="btn btn-info btn-lg"> -->
-					<button ng-click='checkAnswer()' class="btn btn-info btn-lg" value="{{option}}" name="answer" >
+					<button ng-click='checkAnswer(option)' class="btn btn-info btn-lg" value="{{option}}" name="answer" >
 						{{option}}
 						</button>
 				</label>
@@ -30,10 +30,10 @@
 		</ul>
 
 
-		<button ng-click="nextQuestion()" class="btn btn-info "class="next-question">Skip</button>
+		<button ng-click="nextQuestion()" class="btn btn-info "class="next-question">Next</button>
 
 
-		<div ng-show='!answerMode'><button ng-click="nextQuestion()" class="btn btn-info btn-raised" class="next-question">Next</button></div>
+<!-- 		<div ng-show='!answerMode'><button ng-click="nextQuestion()" class="btn btn-info btn-raised" class="next-question">Next</button></div> -->
 
 		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
 

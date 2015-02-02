@@ -32,17 +32,13 @@ app.directive('quiz', function(quizFactory) {
 				}
 			};
 
-			scope.checkAnswer = function() {
+			scope.checkAnswer = function(option) {
 				// if(!$('input[name=answer]:checked').length) return;
  
 				// var ans = $('input[name=answer]:checked').val();
+				var answer = scope.options.indexOf(option);
 
-
-				if(!$('button').length) return;
-
-				var ans = $('button').val();
-
-				if(ans == scope.options[scope.answer]) {
+				if(answer === scope.answer) {
 					scope.score++;
 					scope.correctAns = true;
 				} else {
@@ -67,7 +63,9 @@ app.factory('quizFactory', function() {
 		{
 			question: "How many concentrations are within SIAT?",
 			options: ["1", "2", "3", "4"],
-			answer: 2
+			answer: 2,
+			answered:false
+			
 		},
 		{
 			question: "In which class do you read a book called “101 Things I Learned in Architecture School?",

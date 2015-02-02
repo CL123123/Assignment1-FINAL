@@ -4,35 +4,41 @@
 		<h2 id="question">{{question}}</h2> 
 
 		<ul id="options">
-			<li ng-repeat="option in options">
+			<div ng-repeat="option in options">
 				<div>
 				<label>
 					<input type="radio" name="answer" value="{{option}}" >
 						{{option}}
 				</label>
 				</div>
-			</li>
+			</div>
 		</ul>
-		<button ng-click="checkAnswer()" ng-show="answerMode" class="btn btn-info btn-raised">Submit</button>
 
-			<div id="score">
-		Score: {{score}}
-	</div>
-</div>
+		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
 
+		<button ng-click="checkAnswer()" ng-show="answerMode" class="btn btn-success btn-raised">Submit</button>
+
+		<button ng-click="nextQuestion()" class="btn btn-info btn-raised"class="next-question">Skip</button>
 
 		<div ng-show="!answerMode">
 			<button ng-click="nextQuestion()" class="btn btn-success btn-raised"class="next-question">Next</button>
 			<span ng-show="correctAns">That is correct!</span>
 			<span ng-show="!correctAns"> Sorry, that is an incorrect answer.</span>
 		</div>
+
 	</div>
+
 
 	<div ng-show="quizOver">
 		<h2>Quiz is over</h2>
 		<button ng-click="reset()" class="btn btn-primary btn-raised">Play again</button>
 	</div>
 
+	<div id="score">
+	Score: {{score}}
+	</div>
+
+</div>
 
 <div class="jumbotron" ng-show="!inProgress">
 	<p>Welcome to the QuizApp</p>

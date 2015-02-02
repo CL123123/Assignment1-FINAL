@@ -32,9 +32,9 @@ app.directive('quiz', function(quizFactory) {
 			};
 
 			scope.checkAnswer = function() {
-				if(!$('input[name=answer]:checked').length) return;
+				if(!$('input').length) return;
 
-				var ans = $('input[name=answer]:checked').val();
+				var ans = $('input').val();
 
 				if(ans == scope.options[scope.answer]) {
 					scope.score++;

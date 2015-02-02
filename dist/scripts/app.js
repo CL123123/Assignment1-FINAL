@@ -94,9 +94,9 @@ app.factory('quizFactory', function() {
 			answer: 3
 		},	
 		{
-			question: "A friend asks you what SIAT is, how would you answer?",
-			options: ["Pretend you receive a call to avoid the question", "Show them an 'Are You SFU booklet' (that you always have on you for this specific moment)", "Only saying School of Interactive Arts and Technology", "It's art and technology or something"],
-			answer: 2
+			question: "Where do SIAT Students go to work on projects?",
+			options: ["Library", "Mezzanine", "Team Room", "Studios A, B, & C"],
+			answer: 3
 		}					
 	];
 

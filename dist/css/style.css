@@ -2,13 +2,13 @@
 	margin: 10px 0;
 }
 
-.next-question {
-
+.question {
+	text-align: center;
 }
 
-#score {
-	margin-left: 900px;
+#scores {
 	font-size: 18px;
 	font-weight: bold;
+	text-align: center;
 }
 

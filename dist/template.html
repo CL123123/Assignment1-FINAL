@@ -1,7 +1,9 @@
+
 <div class="jumbotron" ng-show="inProgress">
+<p id='scores'>Score: {{score}}</p>
 	<div ng-show="!quizOver">
 
-		<h2 id="question">{{question}}</h2> 
+		<h2 id="question">{{question}}</h2>
 
 		<ul id="options">
 			<div ng-repeat="option in options">
@@ -14,6 +16,7 @@
 			</div>
 		</ul>
 
+
 		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
 
 		<button ng-click="checkAnswer()" ng-show="answerMode" class="btn btn-success btn-raised">Submit</button>
@@ -21,6 +24,7 @@
 		<button ng-click="nextQuestion()" class="btn btn-info btn-raised"class="next-question">Skip</button>
 
 		<div ng-show="!answerMode">
+		
 			<button ng-click="nextQuestion()" class="btn btn-success btn-raised"class="next-question">Next</button>
 			<span ng-show="correctAns">That is correct!</span>
 			<span ng-show="!correctAns"> Sorry, that is an incorrect answer.</span>
@@ -30,18 +34,16 @@
 
 
 	<div ng-show="quizOver">
-		<h2>Quiz is over</h2>
+		<h2>The quiz has ended</h2>
+		<p>you scored {{score}} points!</p>
 		<button ng-click="reset()" class="btn btn-primary btn-raised">Play again</button>
-	</div>
-
-	<div id="score">
-	Score: {{score}}
 	</div>
 
 </div>
 
 <div class="jumbotron" ng-show="!inProgress">
-	<p>Welcome to the QuizApp</p>
+	<br>
+	<p>Welcome!</p>
 	<br><br>
 	<p></p>
 	<button id="startQuiz" ng-click="start()" class="btn btn-info btn-raised">Start the Quiz</button>

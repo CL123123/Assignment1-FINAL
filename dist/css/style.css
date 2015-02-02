@@ -1,0 +1,13 @@
+#options {
+	margin: 10px 0;
+}
+
+.next-question {
+	margin-right: 10px;
+}
+
+#score {
+	margin-left: 900px;
+	font-size: 18px;
+	font-weight: bold;
+}

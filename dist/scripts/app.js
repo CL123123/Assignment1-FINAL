@@ -59,30 +59,45 @@ app.directive('quiz', function(quizFactory) {
 app.factory('quizFactory', function() {
 	var questions = [
 		{
-			question: "Which is the largest country in the world by population?",
-			options: ["India", "USA", "China", "Russia"],
+			question: "How many concentrations are within SIAT?",
+			options: ["1", "2", "3", "4"],
 			answer: 2
 		},
 		{
-			question: "When did the second world war end?",
-			options: ["1945", "1939", "1944", "1942"],
-			answer: 0
+			question: "In which class do you read a book called “101 Things I Learned in Architecture School?",
+			options: ["IAT 202", "IAT 233", "IAT 448", "IAT 381"],
+			answer: 1
 		},
 		{
-			question: "Which was the first country to issue paper currency?",
-			options: ["USA", "France", "Italy", "China"],
+			question: "Which professor wears glasses made from cork?",
+			options: ["Russell Taylor", "Halil Erhan", "Ken Zupan", "Andrew Hawr...something"],
 			answer: 3
 		},
 		{
-			question: "Which city hosted the 1996 Summer Olympics?",
-			options: ["Atlanta", "Sydney", "Athens", "Beijing"],
-			answer: 0
+			question: "Which SIAT course is the best?",
+			options: ["IAT 344", "IAT 100", "IAT 381", "IAT 233"],
+			answer: [0, 1, 2, 3]
 		},
 		{	
-			question: "Who invented telephone?",
-			options: ["Albert Einstein", "Alexander Graham Bell", "Isaac Newton", "Marie Curie"],
-			answer: 1
-		}
+			question: "Which is the SIAT ‘standard’ font for presentations?",
+			options: ["DIN-Pro", "Comic-Sans", "Avenir", "Helvetica"],
+			answer: 0
+		},
+		{
+			question: "How many years does it take to graduate from SIAT?",
+			options: ["Over 9000", "3", "4", "Graduate??? Pfft!"],
+			answer: [2, 3]
+		},
+		{
+			question: "Which phrases are heard throughout SIAT courses?",
+			options: ["Less is more", "Show don't tell", "Strive to be a unicorn", "All of the Above"],
+			answer: 3
+		},	
+		{
+			question: "A friend asks you what SIAT is, how would you answer?",
+			options: ["Pretend you receive a call to avoid the question", "Show them an 'Are You SFU booklet' (that you always have on you for this specific moment)", "Only saying School of Interactive Arts and Technology", "It's art and technology or something"],
+			answer: 2
+		}					
 	];
 
 	return {
@@ -96,15 +111,16 @@ app.factory('quizFactory', function() {
 	};
 });
 
+// routes for the home, how to play, and contact page
 app.config(function ($routeProvider) {
   $routeProvider
     .when('/home', {
       templateUrl: 'pages/home.html',
       controller : 'MainController'
     })
-    .when('/how', {
-      templateUrl: 'pages/howto.html',
-      controller : 'HowController'
+    .when('/about', {
+      templateUrl: 'pages/about.html',
+      controller : 'AboutController'
     })
     .when('/contact', {
       templateUrl: 'pages/contact.html',

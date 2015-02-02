@@ -16,16 +16,15 @@
 			</div>
 		</ul>
 
-
-		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
-
-		<button ng-click="checkAnswer()" ng-show="answerMode" class="btn btn-success btn-raised">Submit</button>
-
+		<button ng-click="checkAnswer()"  class="btn btn-success btn-raised">Submit</button>
+		<br>
 		<button ng-click="nextQuestion()" class="btn btn-info btn-raised"class="next-question">Skip</button>
+		<br>
+		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
 
 		<div ng-show="!answerMode">
 		
-			<button ng-click="nextQuestion()" class="btn btn-success btn-raised"class="next-question">Next</button>
+<!-- 			<button ng-click="nextQuestion()" class="btn btn-success btn-raised"class="next-question">Next</button> -->
 			<span ng-show="correctAns">That is correct!</span>
 			<span ng-show="!correctAns"> Sorry, that is an incorrect answer.</span>
 		</div>

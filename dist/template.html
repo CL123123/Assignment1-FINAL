@@ -7,12 +7,12 @@
 		<div ng-show="!answerMode">
 			<div class="alert alert-dismissable alert-danger" ng-show='!correctAns'>
    			 	<button type="button" class="close" data-dismiss="alert">×</button>
-   			 	<strong>Sorry! </strong> That is an incorrect answer.
+   			 	<strong>Sorry! </strong> That is an incorrect answer. Please click next to continue.
 			</div>
 
 			<div class="alert alert-dismissable alert-success" ng-show='correctAns'>
    			 	<button type="button" class="close" data-dismiss="alert">×</button>
-   			 	<strong >Congrats!</strong> That answer is correct.
+   			 	<strong >Congrats!</strong> That answer is correct. Please click next to continue.
 			</div>
 		</div>
 
@@ -20,19 +20,20 @@
 			<div ng-repeat="option in options">
 				<div>
 				<label>
-				<input type="button" name="answer" value="{{option}}" ng-click="checkAnswer()" class="btn btn-info btn-lg">
-<!-- 					<button ng-click='checkAnswer()' class="btn btn-info btn-lg" >
+<!-- 				<input type="button" name="answer" value="{{option}}" ng-click="checkAnswer()" class="btn btn-info btn-lg"> -->
+					<button ng-click='checkAnswer()' class="btn btn-info btn-lg" value="{{option}}" name="answer" >
 						{{option}}
-						</button> -->
+						</button>
 				</label>
 				</div>
 			</div>
 		</ul>
 
 
+		<button ng-click="nextQuestion()" class="btn btn-info "class="next-question">Skip</button>
 
-		<button ng-click="nextQuestion()" class="btn btn-info btn-raised"class="next-question">Skip</button>
-		<div ng-show='!answerMode'><button ng-click="nextQuestion()" class="btn btn-info btn-raised"class="next-question">Next</button></div>
+
+		<div ng-show='!answerMode'><button ng-click="nextQuestion()" class="btn btn-info btn-raised" class="next-question">Next</button></div>
 
 		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
 

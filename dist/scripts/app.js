@@ -12,6 +12,7 @@ app.directive('quiz', function(quizFactory) {
 				scope.quizOver = false;
 				scope.inProgress = true;
 				scope.getQuestion();
+				scope.btnNO = false;
 			};
 
 			scope.reset = function() {
@@ -32,9 +33,9 @@ app.directive('quiz', function(quizFactory) {
 			};
 
 			scope.checkAnswer = function() {
-				if(!$('input').length) return;
+				if(!$('button').length) return;
 
-				var ans = $('input').val();
+				var ans = $('button').val();
 
 				if(ans == scope.options[scope.answer]) {
 					scope.score++;

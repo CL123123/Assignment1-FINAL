@@ -20,9 +20,10 @@
 			<div ng-repeat="option in options">
 				<div>
 				<label>
-					<button ng-click='checkAnswer()' class="btn btn-info btn-lg" >
+				<input type="button" name="answer" value="{{option}}" ng-click="checkAnswer()">
+<!-- 					<button ng-click='checkAnswer()' class="btn btn-info btn-lg" >
 						{{option}}
-						</button>
+						</button> -->
 				</label>
 				</div>
 			</div>

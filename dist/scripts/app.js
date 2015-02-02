@@ -127,7 +127,7 @@ app.config(function ($routeProvider) {
       controller : 'ContactController'
     })
     .otherwise({
-      redirectTo: '/'
+      redirectTo: '/home'
 	});    
 });    
 

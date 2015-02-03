@@ -20,8 +20,7 @@
 			<div ng-repeat="option in options">
 				<div>
 				<label>
-<!-- 				<input type="button" name="answer" value="{{option}}" ng-click="checkAnswer()" class="btn btn-info btn-lg"> -->
-					<button ng-click='checkAnswer(option)' class="btn btn-info btn-lg" value="{{option}}" name="answer" >
+					<button ng-click='checkAnswer(option)' class="btn btn-info btn-lg" value="{{option}}" name="answer" onclick="this.disabled=true;">
 						{{option}}
 						</button>
 				</label>

@@ -1,4 +1,7 @@
-var app = angular.module('quizApp', ['ngRoute']);
+var app = angular.module('quizApp', [
+	'ngRoute'
+
+	]);
 
 
 app.directive('quiz', function(quizFactory) {
@@ -12,7 +15,6 @@ app.directive('quiz', function(quizFactory) {
 				scope.quizOver = false;
 				scope.inProgress = true;
 				scope.getQuestion();
-				scope.btnNO = false;
 			};
 
 			scope.reset = function() {
@@ -33,9 +35,6 @@ app.directive('quiz', function(quizFactory) {
 			};
 
 			scope.checkAnswer = function(option) {
-				// if(!$('input[name=answer]:checked').length) return;
- 
-				// var ans = $('input[name=answer]:checked').val();
 				var answer = scope.options.indexOf(option);
 
 				if(answer === scope.answer) {
@@ -46,6 +45,7 @@ app.directive('quiz', function(quizFactory) {
 				}
 
 				scope.answerMode = false;
+				
 			};
 
 			scope.nextQuestion = function() {
@@ -63,9 +63,7 @@ app.factory('quizFactory', function() {
 		{
 			question: "How many concentrations are within SIAT?",
 			options: ["1", "2", "3", "4"],
-			answer: 2,
-			answered:false
-			
+			answer: 2
 		},
 		{
 			question: "In which class do you read a book called “101 Things I Learned in Architecture School?",

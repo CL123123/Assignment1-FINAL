@@ -14,6 +14,11 @@
 #over {
 	text-align: center;
 }
-#spacing {
-	margin: 10px;
+#over2{
+	text-align: left;
+	font-size: 17px;
+	font-weight: normal;
+}
+#over3{
+	text-align: left;
 }

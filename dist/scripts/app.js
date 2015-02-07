@@ -61,9 +61,12 @@ app.directive('quiz', function(quizFactory) {
 					scope.getQuestion();
 					scope.noAns = false;
 
+<<<<<<< HEAD
 				}
 	
 			}
+=======
+>>>>>>> origin/gh-pages
 			scope.reset();
 		}
 	}

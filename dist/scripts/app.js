@@ -45,8 +45,10 @@ app.directive('quiz', function(quizFactory) {
 				if(answer === scope.answer) {
 					scope.score++;
 					scope.correctAns = true;
+					scope.noAns = false;
 				} else {
 					scope.correctAns = false;
+					scope.noAns = false;
 				}
 				scope.answerMode = false;
 
@@ -56,6 +58,7 @@ app.directive('quiz', function(quizFactory) {
 			scope.nextQuestion = function() {
 				if (scope.answerMode === true ) {
 					scope.noAns = true;
+					$.snackbar(sbOption);
 				} else  {
 					scope.id++;
 					scope.getQuestion();
@@ -122,6 +125,8 @@ app.factory('quizFactory', function() {
 		}
 	};
 });
+
+
 
 // routes for the home, how to play, and contact page
 app.config(function ($routeProvider) {

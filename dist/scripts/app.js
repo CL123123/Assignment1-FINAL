@@ -10,21 +10,25 @@ app.directive('quiz', function(quizFactory) {
 		scope: {},
 		templateUrl: 'template.html',
 		link: function(scope, elem, attrs) {
+
+			scope.activeQuestion = {};
+
 			scope.start = function() {
 				scope.id = 0;
 				scope.quizOver = false;
 				scope.inProgress = true;
 				scope.getQuestion();
-				scope.noAns = false;
 			};
 
 			scope.reset = function() {
 				scope.inProgress = false;
 				scope.score = 0;
+				scope.noAns = false;
 			}
 
 			scope.getQuestion = function(option) {
 				var q = quizFactory.getQuestion(scope.id);
+				scope.activeQuestion = angular.copy(q);
 				if(q) {
 					scope.question = q.question;
 					scope.options = q.options;
@@ -41,34 +45,25 @@ app.directive('quiz', function(quizFactory) {
 				if(answer === scope.answer) {
 					scope.score++;
 					scope.correctAns = true;
-
 				} else {
 					scope.correctAns = false;
 				}
 				scope.answerMode = false;
-				angular.forEach(scope.options, function(options) {
-      				options.answer_disabled = true;
-    			});
+
+				scope.activeQuestion.disabled = true;
 			};
 
 			scope.nextQuestion = function() {
-				// scope.id++;
-				// scope.getQuestion();
-				if (scope.answerMode ==true) {
+				if (scope.answerMode === true ) {
 					scope.noAns = true;
-					scope.message = 'Please select an answer';
 				} else  {
 					scope.id++;
 					scope.getQuestion();
-				}
-			}
+					scope.noAns = false;
 
-			scope.disableBTTN = function(option) {
-				if (scope.answerMode = true) {
-				document.getElementByID('option').disabled = true;			
 				}
+	
 			}
-
 			scope.reset();
 		}
 	}

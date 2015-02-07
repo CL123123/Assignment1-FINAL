@@ -14,19 +14,17 @@
    			 	<button type="button" class="close" data-dismiss="alert">×</button>
    			 	<strong >Congrats!</strong> That answer is correct. Please click NEXT to continue.
 			</div>
-
-			<div class="alert alert-dismissable alert-warning" ng-show='noAns'>
-   			 	<button type="button" class="close" data-dismiss="alert">×</button>
-   			 	<strong >Warning</strong> {{message}}
-			</div>
 		</div>
 
+		<div class="alert alert-dismissable alert-warning" ng-show='noAns'>
+   			 <strong >Warning</strong> Please select an answer below.
+		</div>
 
 		<ul id="options">
 			<div ng-repeat="option in options">
 				<div>
 				<label>
-					<button ng-click='checkAnswer(option)' class="btn btn-info btn-lg" value="{{option}}" name="answer" ng-disabled="option.answer_disabled">
+					<button ng-click='checkAnswer(option)' class="btn btn-info btn-lg" value="{{option}}" name="answer" ng-disabled="activeQuestion.disabled">
 						{{option}}
 						</button>
 				</label>
@@ -35,7 +33,7 @@
 		</ul>
 
 
-		<button ng-click="nextQuestion()" class="btn btn-info "class="next-question">Next</button>
+		<button ng-click="nextQuestion()"ng-click="questionID()" class="btn btn-info "class="next-question">Next</button>
 
 
 		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
@@ -57,7 +55,6 @@
 	<p id="over2">This quiz will test your knowledge of SIAT:</p>
 	<ul>
 		<li>Every question is worth 1 point.</li> 
-		<li>If you skip a question, no points are awarded.</li>
 		<li> You may exit the quiz anytime by pressing the red exit button.</li>
 		</ul>
 		<p id="over3">Please press start when you're ready to begin</p> 

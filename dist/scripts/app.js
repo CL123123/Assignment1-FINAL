@@ -15,6 +15,7 @@ app.directive('quiz', function(quizFactory) {
 
 			scope.start = function() {
 				scope.id = 0;
+				scope.qCount = 0;
 				scope.quizOver = false;
 				scope.inProgress = true;
 				scope.getQuestion();
@@ -23,10 +24,12 @@ app.directive('quiz', function(quizFactory) {
 			scope.reset = function() {
 				scope.inProgress = false;
 				scope.score = 0;
+				scope.qCount = 0;
 				scope.noAns = false;
 			}
 
 			scope.getQuestion = function(option) {
+				var counter = scope.qCount;
 				var q = quizFactory.getQuestion(scope.id);
 				scope.activeQuestion = angular.copy(q);
 				if(q) {
@@ -34,6 +37,7 @@ app.directive('quiz', function(quizFactory) {
 					scope.options = q.options;
 					scope.answer = q.answer;
 					scope.answerMode = true;
+					scope.qCount++;
 				} else {
 					scope.quizOver = true;
 				}
@@ -58,7 +62,6 @@ app.directive('quiz', function(quizFactory) {
 			scope.nextQuestion = function() {
 				if (scope.answerMode === true ) {
 					scope.noAns = true;
-					$.snackbar(sbOption);
 				} else  {
 					scope.id++;
 					scope.getQuestion();

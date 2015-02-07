@@ -1,9 +1,15 @@
 #options {
 	margin: 10px 0;
+	text-align: center;
 }
 
 #question {
 	text-align: center;
+}
+
+label {
+	text-align: center;
+	width: 80%;
 }
 
 #scores {
@@ -21,4 +27,7 @@
 }
 #over3{
 	text-align: left;
+}
+.count{
+	text-align: right;
 }

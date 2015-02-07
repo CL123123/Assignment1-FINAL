@@ -1,8 +1,9 @@
-
-<div class="jumbotron" ng-show="inProgress">
+<p class="count">Question: {{qCount}}/8</p>
+<div  ng-show="inProgress">
+<div class="jumbotron">
 <p id='scores'>Score: {{score}}</p>
 	<div ng-show="!quizOver">
-		<h2 id="question">{{question}}</h2>
+		<h3 id="question">{{question}}</h3>
 
 		<div ng-show="!answerMode">
 			<div class="alert alert-dismissable alert-danger" ng-show='!correctAns'>
@@ -29,12 +30,12 @@
 						</button>
 				</label>
 				</div>
+				</div>
 			</div>
 		</ul>
 
 		<button ng-click="nextQuestion()" class="btn btn-info "class="next-question">Next</button>
-
-
+		<br><br>
 		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
 
 	</div>

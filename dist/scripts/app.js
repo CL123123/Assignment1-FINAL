@@ -63,12 +63,6 @@ app.directive('quiz', function(quizFactory) {
 				}
 			}
 
-			scope.disableBTTN = function(option) {
-				if (scope.answerMode = true) {
-				document.getElementByID('option').disabled = true;			
-				}
-			}
-
 			scope.reset();
 		}
 	}

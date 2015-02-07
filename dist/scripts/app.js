@@ -15,6 +15,7 @@ app.directive('quiz', function(quizFactory) {
 				scope.quizOver = false;
 				scope.inProgress = true;
 				scope.getQuestion();
+				scope.noAns = false;
 			};
 
 			scope.reset = function() {
@@ -22,7 +23,7 @@ app.directive('quiz', function(quizFactory) {
 				scope.score = 0;
 			}
 
-			scope.getQuestion = function() {
+			scope.getQuestion = function(option) {
 				var q = quizFactory.getQuestion(scope.id);
 				if(q) {
 					scope.question = q.question;
@@ -40,17 +41,32 @@ app.directive('quiz', function(quizFactory) {
 				if(answer === scope.answer) {
 					scope.score++;
 					scope.correctAns = true;
+
 				} else {
 					scope.correctAns = false;
 				}
-
 				scope.answerMode = false;
-				
+				angular.forEach(scope.options, function(options) {
+      				options.answer_disabled = true;
+    			});
 			};
 
 			scope.nextQuestion = function() {
-				scope.id++;
-				scope.getQuestion();
+				// scope.id++;
+				// scope.getQuestion();
+				if (scope.answerMode ==true) {
+					scope.noAns = true;
+					scope.message = 'Please select an answer';
+				} else  {
+					scope.id++;
+					scope.getQuestion();
+				}
+			}
+
+			scope.disableBTTN = function(option) {
+				if (scope.answerMode = true) {
+				document.getElementByID('option').disabled = true;			
+				}
 			}
 
 			scope.reset();

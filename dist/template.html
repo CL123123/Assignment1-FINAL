@@ -14,13 +14,19 @@
    			 	<button type="button" class="close" data-dismiss="alert">×</button>
    			 	<strong >Congrats!</strong> That answer is correct. Please click NEXT to continue.
 			</div>
+
+			<div class="alert alert-dismissable alert-warning" ng-show='noAns'>
+   			 	<button type="button" class="close" data-dismiss="alert">×</button>
+   			 	<strong >Warning</strong> {{message}}
+			</div>
 		</div>
+
 
 		<ul id="options">
 			<div ng-repeat="option in options">
 				<div>
 				<label>
-					<button ng-click='checkAnswer(option)' class="btn btn-info btn-lg" value="{{option}}" name="answer" onclick="this.disabled=true;">
+					<button ng-click='checkAnswer(option)' class="btn btn-info btn-lg" value="{{option}}" name="answer" ng-disabled="option.answer_disabled">
 						{{option}}
 						</button>
 				</label>
@@ -31,7 +37,6 @@
 
 		<button ng-click="nextQuestion()" class="btn btn-info "class="next-question">Next</button>
 
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 		<button ng-click="reset()" class="btn btn-danger btn-raised">Exit</button>
 

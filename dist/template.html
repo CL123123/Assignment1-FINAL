@@ -1,6 +1,5 @@
 <p class="count">Question: {{qCount}}/8</p>
-<div  ng-show="inProgress">
-<div class="jumbotron">
+<div class="jumbotron" ng-show="inProgress">
 <p id='scores'>Score: {{score}}</p>
 	<div ng-show="!quizOver">
 		<h3 id="question">{{question}}</h3>
@@ -29,7 +28,6 @@
 						{{option}}
 						</button>
 				</label>
-				</div>
 				</div>
 			</div>
 		</ul>

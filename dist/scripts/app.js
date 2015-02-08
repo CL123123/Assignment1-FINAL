@@ -88,8 +88,8 @@ app.factory('quizFactory', function() {
 		},
 		{
 			question: "Which professor wears glasses made from cork?",
-			options: ["Russell Taylor", "Halil Erhan", "Ken Zupan", "Andrew Hawr...something"],
-			answer: 3
+			options: ["Russell Taylor", "Andrew Hawr...", "Ken Zupan", "Halil Erhan"],
+			answer: 1
 		},
 		{
 			question: "Which SIAT course is the best?",
@@ -113,8 +113,8 @@ app.factory('quizFactory', function() {
 		},	
 		{
 			question: "Where do SIAT Students go to work on projects?",
-			options: ["Library", "Mezzanine", "Team Room", "Studios A, B, & C"],
-			answer: 3
+			options: ["Studios A, B, & C", "Mezzanine", "Team Room", "Library"],
+			answer: 0
 		}					
 	];
 

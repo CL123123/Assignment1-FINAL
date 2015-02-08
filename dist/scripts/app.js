@@ -103,7 +103,7 @@ app.factory('quizFactory', function() {
 		},
 		{
 			question: "How many years does it take to graduate from SIAT?",
-			options: ["Over 9000", "3", "4", "Graduate??? Pfft!"],
+			options: ["Over 9000", "3", "4", "Graduate?? HAHA!"],
 			answer: 3
 		},
 		{

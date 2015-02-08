@@ -1,4 +1,4 @@
-<p class="count">Question: {{qCount}}/8</p>
+<p class="count"><b>Question: {{qCount}}/8</b></p>
 <div class="jumbotron" ng-show="inProgress">
 <p id='scores'>Score: {{score}}</p>
 	<div ng-show="!quizOver">
@@ -48,13 +48,13 @@
 </div>
 
 <div class="jumbotron" ng-show="!inProgress">
-	<h2 id='over'>Welcome!</h2>
+	<h2 id='over'>SIAT Quiz</h2>
 
-	<p id="over2">This quiz will test your knowledge of SIAT:</p>
+	<p id="over2">How it works:</p>
 	<ul>
 		<li>Every question is worth 1 point.</li> 
-		<li> You may exit the quiz anytime by pressing the red exit button.</li>
-		</ul>
-		<p id="over3">Please press start when you're ready to begin</p> 
+		<li>After you select an answer, click the NEXT button to continue.</li>
+		<li>You may exit the quiz anytime by pressing the red EXIT button.</li>
+	</ul>
 	<div id='over'><button id="startQuiz" ng-click="start()" class="btn btn-info btn-raised">Start the Quiz</button></div>
 </div> 

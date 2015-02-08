@@ -108,7 +108,7 @@ app.factory('quizFactory', function() {
 		},
 		{
 			question: "Which phrases are heard throughout SIAT courses?",
-			options: ["Less is more", "Show don't tell", "Strive to be a unicorn", "All of the Above"],
+			options: ["Less is more", "Show don't tell", "Strive to be unicorns", "All of the Above"],
 			answer: 3
 		},	
 		{

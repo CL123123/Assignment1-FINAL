@@ -116,7 +116,7 @@ The syntax to add a Material icon is:
 
 ### Functions:
 
-This plugin exposes some functions, them are:
+This plugin exposes some functions, they are:
 
 `$.material.init()` is a shortcut to run all the following commands.
 `$.material.ripples()` will apply ripples.js to the default elements.
